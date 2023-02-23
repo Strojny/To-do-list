@@ -1,0 +1,22 @@
+.form__fieldset {
+    display: inline-block;
+    border: none;
+    height: 60px;
+    width: 100%;
+    max-width: 1000px;
+    background-color: white;
+}
+
+.form__inputField {
+    border: 1px solid rgb(163, 163, 163);
+    height: 30px;
+    display: inline-block;
+    padding: 10px;
+}
+
+.addTaskButton {
+    background-color: teal;
+    color: white;
+    border: none;
+    height: 30px;
+}
