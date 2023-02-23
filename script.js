@@ -6,9 +6,18 @@
         },
         {
             content: "Kolejne zadanie",
-            done: false,
+            done: true,
         },
     ];
+
+    const taskDone = () => {
+
+        for(const task of tasks) {
+            if (task.done) {
+                document.querySelector(".js-tasks").classList.add(".taskDone");
+            }
+        }
+    }
 
     const render = () => {
         let htmlString = "";
@@ -22,6 +31,8 @@
         }
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
+
+        taskDone();
     }
 
     const init = () => {
