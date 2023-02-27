@@ -25,9 +25,9 @@
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
                 tasks[index].done = !tasks[index].done;
+                
+                render();
             })
-
-            render();
         })
     }
 
