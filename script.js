@@ -10,14 +10,26 @@
         },
     ];
 
-    const taskDone = () => {
+    /* const taskDone = () => {
 
         for (const task of tasks) {
             if (task.done) {
-                document.querySelector(".js-tasks").classList.add(".taskDone");
+                document.querySelectorAll(".js-tasks").classList.add(".taskDone");
             }
         }
-    };
+    }; */
+
+    const taskDone = () => {
+        const toggleDoneButtons = document.querySelectorAll(".js-done");
+
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                tasks[index].done = !tasks[index].done;
+            })
+
+            render();
+        })
+    }
 
     const removeTask = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -39,6 +51,7 @@
             <li>
             ${task.content}
             <button class="js-remove">Remove task</button>
+            <button class="js-done">Done?</button>
             </li>
             `;
         }
