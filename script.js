@@ -10,22 +10,13 @@
         },
     ];
 
-    /* const taskDone = () => {
-
-        for (const task of tasks) {
-            if (task.done) {
-                document.querySelectorAll(".js-tasks").classList.add(".taskDone");
-            }
-        }
-    }; */
-
     const taskDone = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
                 tasks[index].done = !tasks[index].done;
-                
+
                 render();
             })
         })
@@ -49,8 +40,8 @@
         for (const task of tasks) {
             htmlString += `
             <li>
-            ${task.content}
             <button class="js-remove">Remove task</button>
+            <span ${task.done ? " style=\"text-decoration: line-through\" " : ""}>${task.content}</span>
             <button class="js-done">Done?</button>
             </li>
             `;
