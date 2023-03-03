@@ -7,27 +7,3 @@
 .appHeader {
     margin: 30px 0;
 }
-
-.formHeader {
-    background-color:  white;
-    padding: 10px;
-    border: none;
-    font-size: 20px;
-}
-
-.formContainer {
-    margin: -11px auto;
-}
-
-.taskHeader {
-    background-color:  white;
-    padding: 10px;
-    border: none;
-    font-size: 20px;
-}
-
-.taskContainer {
-    background-color: white;
-    width: 100%;
-    margin: 0px auto;
-}

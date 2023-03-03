@@ -1,3 +1,16 @@
-.taskDone {
-    text-decoration: line-through;
+.taskContainer {
+    background-color: white;
+    min-height: 100px;
+    width: 100%;
+}
+
+.taskHeader {
+    background-color:  white;
+    padding: 10px;
+    border: none;
+    font-size: 20px;
+}
+
+.taskContainer__toggleDoneButton {
+    border: none;
 }
