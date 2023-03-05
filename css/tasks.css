@@ -1,16 +1,70 @@
 .taskContainer {
     background-color: white;
-    min-height: 100px;
+    min-height: 25px;
     width: 100%;
+    margin-top: 10px;
 }
 
 .taskHeader {
-    background-color:  white;
-    padding: 10px;
+    display: inline-block;
+    padding: 0px;
+    margin: 15px;
     border: none;
     font-size: 20px;
 }
 
+.taskContainer__listContainer {
+    width: 100%;
+}
+
+.taskContainer__listBlock {
+    width: 100%;
+    margin: 15px;
+    padding: 0px;
+}
+
+.taskContainer__listItem {
+    background-color: white;
+    width: 100%;
+    list-style: none;
+    height: 35px;
+    margin: 0px 0px 5px;
+}
+
+.taskContainer__taskLine {
+    width: 100%;
+    margin: 5px 5px 0px 0px;
+    display: block;
+    border-bottom: 2px solid rgb(235, 234, 234);
+}
+
 .taskContainer__toggleDoneButton {
     border: none;
+    background: none;
+    margin: 0px; 
+    padding: 0;
+}
+
+.taskContainer__removeButton {
+    margin: 5px;
+    border: none;
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    width: 25px;
+    text-align: center;
+}
+
+.flexTask {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexTask__item {
+    height: 35px;
+    align-self: stretch;
+}
+
+.flexTask__removeButton {
+    align-self: flex-end;
 }
