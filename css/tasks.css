@@ -55,16 +55,7 @@
     text-align: center;
 }
 
-.flexTask {
-    display: flex;
-    flex-direction: column;
-}
-
-.flexTask__item {
-    height: 35px;
-    align-self: stretch;
-}
-
-.flexTask__removeButton {
-    align-self: flex-end;
+.taskContainer__itemContainer {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
 }

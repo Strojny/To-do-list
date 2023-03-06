@@ -39,13 +39,11 @@
 
         for (const task of tasks) {
             htmlString += `
-            <li class="taskContainer__listItem">
-            <div class="flexTask__item">
+            <li class="taskContainer__itemContainer">
             <button class="taskContainer__toggleDoneButton js-done">&#129001</button>
-            <span ${task.done ? " style=\"text-decoration: line-through\" " : ""}>${task.content}</span>
+            <span class="taskContainer__taskContent" ${task.done ? " style=\"text-decoration: line-through\" " : ""}>${task.content}</span>
             <button class="taskContainer__removeButton flexTask__removeButton js-remove">&#128465</button>
             <span class="taskContainer__taskLine"></span>
-            </div>
             </li>
             `;
         }
