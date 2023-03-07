@@ -9,7 +9,7 @@
 }
 
 @media (max-width: 767px) {
-    .flex {
+    .flexInput {
         flex-wrap: wrap;
     }
 }

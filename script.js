@@ -40,10 +40,9 @@
         for (const task of tasks) {
             htmlString += `
             <li class="taskContainer__itemContainer">
-            <button class="taskContainer__toggleDoneButton js-done">&#129001</button>
+            <button class="taskContainer__toggleDoneButton js-done">${task.done ? '&#9989' : '&#129001'}</button>
             <span class="taskContainer__taskContent" ${task.done ? " style=\"text-decoration: line-through\" " : ""}>${task.content}</span>
-            <button class="taskContainer__removeButton flexTask__removeButton js-remove">&#128465</button>
-            <span class="taskContainer__taskLine"></span>
+            <button class="taskContainer__removeButton js-remove">&#128465</button>
             </li>
             `;
         }
@@ -59,10 +58,19 @@
         taskDone();
     };
 
+    const resetForm = () => {
+        const form = document.querySelector(".js-form");
+        const input = document.querySelector(".js-newTask");
+
+        form.reset();
+        input.focus();
+    }
+
     const onFormSubmit = (event) => {
         event.preventDefault();
 
         addNewTask();
+        resetForm();
     };
 
     const addNewTask = () => {
