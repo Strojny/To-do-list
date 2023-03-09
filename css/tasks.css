@@ -1,6 +1,6 @@
 .taskContainer {
     background-color: white;
-    min-height: 25px;
+    min-height: 100px;
     width: 100%;
     margin-top: 10px;
 }
@@ -15,33 +15,19 @@
 
 .taskContainer__listContainer {
     width: 100%;
-    min-height: 35px;
+    min-height: 40px;
+    border-top: 2px solid rgb(235, 234, 234);
 }
 
 .taskContainer__listBlock {
     margin: 15px;
-    padding: 0px;
-}
-
-.taskContainer__listItem {
-    background-color: white;
-    width: 100%;
-    list-style: none;
-    height: 35px;
-    margin: 0px 0px 5px;
-}
-
-.taskContainer__taskLine {
-    width: 100%;
-    margin: 5px 5px 0px 0px;
-    display: block;
-    border-bottom: 2px solid rgb(235, 234, 234);
+    padding: 0px 0px 5px 0px;
 }
 
 .taskContainer__toggleDoneButton {
     border: none;
     background: none;
-    margin: 0px; 
+    margin: 5px; 
     padding: 0;
 }
 
@@ -59,5 +45,10 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     border-bottom: 2px solid rgb(235, 234, 234);
-    margin-bottom: 2px;
+    padding: 5px;
+}
+
+.taskContainer__taskContent {
+    display: flex;
+    align-items: center;
 }
