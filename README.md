@@ -17,6 +17,8 @@ Note that spaces are removed from the task content.
 If you want, you can remove the task using the red button on the right ide of the task.
 You can also mark that a task is done, by clicking the green button on the left side of the task.
 
+![To-do list](C:\dev\Moduł 6\To-do list\videos)
+
 ##Try it yourself ;)
 
 https://strojny.github.io/To-do-list/
