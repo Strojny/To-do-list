@@ -81,12 +81,26 @@
         render();
     };
 
+    const formFocus = () => {
+        const form = document.querySelector(".js-form");
+        
+        form.focus();
+    }
+
+    const onTaskButtonClick = () => {
+        const taskButton = document.querySelector("js-taskButton");
+
+        taskButton.addEventListener("click", formFocus);
+    }
+
     const init = () => {
         render();
 
         const form = document.querySelector(".js-form");
 
         form.addEventListener("submit", onFormSubmit);
+        
+        onTaskButtonClick();
     };
 
     init();
