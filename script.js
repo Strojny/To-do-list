@@ -77,20 +77,20 @@
         });
 
         newTask.value = "";
-
+        
         render();
     };
 
-    const formFocus = () => {
+    const formReset = () => {
         const form = document.querySelector(".js-form");
-        
-        form.focus();
+
+        form.reset();
     }
 
     const onTaskButtonClick = () => {
-        const taskButton = document.querySelector("js-taskButton");
+        const taskButton = document.querySelector(".js-taskButton");
 
-        taskButton.addEventListener("click", formFocus);
+        taskButton.addEventListener("click", formReset);
     }
 
     const init = () => {
@@ -98,9 +98,8 @@
 
         const form = document.querySelector(".js-form");
 
-        form.addEventListener("submit", onFormSubmit);
-        
         onTaskButtonClick();
+        form.addEventListener("submit", onFormSubmit);
     };
 
     init();
