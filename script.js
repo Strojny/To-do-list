@@ -84,7 +84,7 @@
     const formReset = () => {
         const form = document.querySelector(".js-form");
 
-        form.reset();
+        //form.reset();//
     }
 
     const onTaskButtonClick = () => {
