@@ -36,7 +36,7 @@
 
 .taskContainer__toggleDoneButton:active {
     outline: 2px solid black;
-    outline-offset: -2px;
+    outline-offset: -3px;
 }
 
 .taskContainer__removeButton {

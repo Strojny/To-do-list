@@ -43,6 +43,12 @@
     height: 35px;
 }
 
+.form_addTaskButton:active {
+    border: 1px solid black;
+    border-radius: 1px;
+    outline: 1px solid black;
+}
+
 .flexInput {
     display: flex;
     align-items: center;
