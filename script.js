@@ -40,9 +40,15 @@
         for (const task of tasks) {
             htmlString += `
             <li class="taskContainer__itemContainer">
-            <button class="taskContainer__toggleDoneButton js-done">${task.done ? '&#9989' : '&#129001'}</button>
-            <span class="taskContainer__taskContent" ${task.done ? " style=\"text-decoration: line-through\" " : ""}>${task.content}</span>
-            <button class="taskContainer__removeButton js-remove">&#128465</button>
+              <button class="taskContainer__toggleDoneButton js-done">
+                ${task.done ? '&#9989' : '&#129001'}
+              </button>
+                <span class="taskContainer__taskContent" ${task.done ? " style=\"text-decoration: line-through\" " : ""}>
+                  ${task.content}
+                </span>
+              <button class="taskContainer__removeButton js-remove">
+              &#128465
+              </button>
             </li>
             `;
         }
@@ -78,7 +84,7 @@
         });
 
         newTask.value = "";
-        
+
         render();
     };
 
