@@ -62,6 +62,7 @@
         event.preventDefault();
 
         addNewTask();
+        formFocus();
     };
 
     const addNewTask = () => {
@@ -81,16 +82,10 @@
         render();
     };
 
-    const formReset = () => {
-        const form = document.querySelector(".js-form");
+    const formFocus = () => {
+        const form = document.querySelector(".js-newTask");
 
-        //form.reset();//
-    }
-
-    const onTaskButtonClick = () => {
-        const taskButton = document.querySelector(".js-taskButton");
-
-        taskButton.addEventListener("click", formReset);
+        form.focus();
     }
 
     const init = () => {
@@ -98,7 +93,6 @@
 
         const form = document.querySelector(".js-form");
 
-        onTaskButtonClick();
         form.addEventListener("submit", onFormSubmit);
     };
 
