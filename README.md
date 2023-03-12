@@ -16,6 +16,7 @@ Your cursor will stay in the form's input field, so you can add another task wit
 Note that spaces are removed from the task content, which is really convinient.
 If you want, you can remove the task using the red button on the right side of the task.
 You can also mark/unmark if a task is done, by clicking the green button on the left side of the task.
+To-do list is responsive, so it can also be used on mobile screens.
 
 ![To-do list](https://raw.githubusercontent.com/Strojny/To-do-list/master/videos/To-do%20list.gif)
 
