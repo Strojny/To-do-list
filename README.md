@@ -20,7 +20,7 @@ To-do list is responsive, so it can also be used on mobile screens.
 
 ![To-do list](https://raw.githubusercontent.com/Strojny/To-do-list/master/videos/To-do%20list.gif)
 
-##Try it yourself ;)
+## Try it yourself ;)
 
 https://strojny.github.io/To-do-list/
 
