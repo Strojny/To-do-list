@@ -1,14 +1,5 @@
 {
-    const tasks = [
-        {
-            content: "Jakieś zadanie",
-            done: false,
-        },
-        {
-            content: "Kolejne zadanie",
-            done: true,
-        },
-    ];
+    const tasks = [];
 
     const taskDone = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
