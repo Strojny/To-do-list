@@ -41,7 +41,7 @@
             htmlString += `
             <li class="taskContainer__itemContainer">
               <button class="taskContainer__toggleDoneButton js-done">
-                ${task.done ? '&#9989' : '&#129001'}
+                ${task.done ? '&#10004;' : ''}
               </button>
                 <span class="taskContainer__taskContent" ${task.done ? " style=\"text-decoration: line-through\" " : ""}>
                   ${task.content}
@@ -67,11 +67,11 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        addNewTask();
+        refreshPageStatus();
         formFocus();
     };
 
-    const addNewTask = () => {
+    const refreshPageStatus = () => {
         const newTask = document.querySelector(".js-newTask");
         const newTaskContent = newTask.value.trim();
 
