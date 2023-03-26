@@ -20,28 +20,30 @@
 <body class="body">
     <div class="container">
         <h1 class="appHeader">Lista zadań</h1>
-        <div class="formContainer">
-            <div class="formHeaderContainer">
-                <h2 class="formHeader">
-                    Dodaj nowe zadanie
-                </h2>
+        <div class="section">
+            <div class="formContainer">
+                <div class="formHeaderContainer">
+                    <h2 class="formHeader">
+                        Dodaj nowe zadanie
+                    </h2>
+                </div>
+                <form class="form js-form">
+                    <fieldset class="form__fieldset">
+                        <div class="flexInput form__inputBlock">
+                            <input class="flexInput__itemInput form__inputField js-newTask"
+                                placeholder="Co jest do zrobienia?" name="task">
+                            <button class="flexInput__itemButton form_addTaskButton">Dodaj zadanie</button>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
-            <form class="form js-form">
-                <fieldset class="form__fieldset">
-                    <div class="flexInput form__inputBlock">
-                        <input class="flexInput__itemInput form__inputField js-newTask"
-                            placeholder="Co jest do zrobienia?" name="task">
-                        <button class="flexInput__itemButton form_addTaskButton">Dodaj zadanie</button>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-        <div class="taskContainer">
-            <h2 class="taskHeader">
-                Lista zadań
-            </h2>
-            <div class="taskContainer__listContainer flexTask">
-                <ul class="taskContainer__listBlock js-tasks"></ul>
+            <div class="taskContainer">
+                <h2 class="taskHeader">
+                    Lista zadań
+                </h2>
+                <div class="taskContainer__listContainer flexTask">
+                    <ul class="taskContainer__listBlock js-tasks"></ul>
+                </div>
             </div>
         </div>
     </div>

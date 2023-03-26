@@ -1,9 +1,9 @@
-.formContainer {
+/* .formContainer {
     background-color: white;
     display: inline-block;
     border: none;
     width: 100%;
-}
+} */
 
 .formHeaderContainer {
     border-bottom: 2px solid rgb(221, 221, 221);
@@ -19,20 +19,25 @@
 .form__inputBlock {
     width: 100%;
     margin: 0;
+    padding: 15px;
+    border-bottom: 10px solid rgb(221, 221, 221);
 }
 
 .form__fieldset {
     border: none;
-    margin: 15px;
     padding: 0;
+    margin: 0;
 }
 
 .form__inputField {
     height: 35px;
-    margin: 0 15px 0 0;
-    padding: 10px;
     border: 1px solid rgb(163, 163, 163);
     display: inline-block;
+    outline: none;
+}
+
+.form__inputField:focus {
+    outline: 1px solid black;
 }
 
 .form_addTaskButton {

@@ -1,9 +1,9 @@
-.taskContainer {
+/* .taskContainer {
     background-color: white;
     min-height: 100px;
     width: 100%;
     margin-top: 10px;
-}
+} */
 
 .taskHeader {
     display: inline-block;
@@ -39,6 +39,7 @@
 .taskContainer__toggleDoneButton:active {
     border: 1px solid black;
     border-radius: 2px;
+    outline: 1px solid black;
 }
 
 .taskContainer__removeButton {
@@ -56,6 +57,7 @@
 .taskContainer__removeButton:active {
     border: 1px solid black;
     border-radius: 2px;
+    outline: 1px solid black;
 }
 
 .taskContainer__itemContainer {
