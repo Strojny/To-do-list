@@ -1,14 +1,26 @@
 {
     let tasks = [];
 
-    const taskDone = () => {
+    const updateTasks = (TaskIndex) => {
+        tasks = tasks.map((task, mapIndex) => {
+            if (TaskIndex === mapIndex) {
+                return {
+                    ...task,
+                    done: !task.done,
+                }
+            }
+            return task;
+        });
+
+        render();
+    }
+
+    const taskDone = () => {s
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
-        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+        toggleDoneButtons.forEach((toggleDoneButton, TaskIndex) => {
             toggleDoneButton.addEventListener("click", () => {
-                tasks[index].done = !tasks[index].done;
-
-                render();
+                updateTasks(TaskIndex);
             })
         })
     }
