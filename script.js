@@ -1,5 +1,5 @@
 {
-    const tasks = [];
+    let tasks = [];
 
     const taskDone = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
@@ -70,9 +70,10 @@
             return;
         }
 
-        tasks.push({
-            content: newTaskContent,
-        });
+        tasks = [
+            ...tasks,
+            { content: newTaskContent },
+        ];
 
         newTask.value = "";
 
