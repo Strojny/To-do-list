@@ -15,7 +15,7 @@
         render();
     }
 
-    const taskDone = () => {s
+    const taskDone = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
         toggleDoneButtons.forEach((toggleDoneButton, TaskIndex) => {
@@ -31,6 +31,7 @@
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
                 tasks.splice(index, 1);
+                // if (removeTaskIndex === filterIndex) ??
 
                 render();
             });
