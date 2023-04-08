@@ -28,32 +28,31 @@
     const removeTask = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
-        removeButtons.forEach((removeButton, index) => {
+        removeButtons.forEach((removeButton, removeTaskIndex) => {
             removeButton.addEventListener("click", () => {
-                tasks.splice(index, 1);
-                // if (removeTaskIndex === filterIndex) ??
+                tasks = tasks.filter((_,index) => index !== removeTaskIndex);
 
                 render();
             });
         });
     };
 
-    const addingListItem = () => {
+    const addingListItem = () => { // renderuje liste zadan
         let htmlString = "";
 
         for (const task of tasks) {
             htmlString += `
-            <li class="taskContainer__itemContainer">
-              <button class="taskContainer__toggleDoneButton js-done">
-                ${task.done ? '&#10004;' : ''}
-              </button>
-                <span class="taskContainer__taskContent" ${task.done ? " style=\"text-decoration: line-through\" " : ""}>
-                  ${task.content}
-                </span>
-              <button class="taskContainer__removeButton js-remove">
-              &#128465
-              </button>
-            </li>
+                <li class="taskContainer__itemContainer">
+                    <button class="taskContainer__toggleDoneButton js-done">
+                        ${task.done ? '&#10004;' : ''}
+                    </button>
+                    <span class="taskContainer__taskContent" ${task.done ? " style=\"text-decoration: line-through\" " : ""}>
+                        ${task.content}
+                    </span>
+                    <button class="taskContainer__removeButton js-remove">
+                        &#128465
+                    </button>
+                </li>
             `;
         }
 
@@ -83,7 +82,7 @@
             return;
         }
 
-        tasks = [
+        tasks = [        // odswieza liste zadan 
             ...tasks,
             { content: newTaskContent },
         ];
@@ -93,7 +92,7 @@
         render();
     };
 
-    const formFocus = () => {
+    const formFocus = () => { // ustawia focus na input formularza
         const form = document.querySelector(".js-newTask");
 
         form.focus();
