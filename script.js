@@ -1,26 +1,36 @@
 {
     let tasks = [];
 
-    const updateTasks = (TaskIndex) => {
-        tasks = tasks.map((task, mapIndex) => {
-            if (TaskIndex === mapIndex) {
-                return {
-                    ...task,
-                    done: !task.done,
-                }
-            }
-            return task;
-        });
+    // const updateTasks = (taskIndex) => {
+    // tasks = tasks.map((task, mapIndex) => {
+    //     if (taskIndex === mapIndex) {
+    //         return {
+    //             ...task,
+    //             done: !task.done,
+    //         }
+    //     }
+    //     return task;
+    // });
 
-        render();
-    }
+    // render();
+    // }
 
     const taskDone = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
-        toggleDoneButtons.forEach((toggleDoneButton, TaskIndex) => {
+        toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
             toggleDoneButton.addEventListener("click", () => {
-                updateTasks(TaskIndex);
+                tasks = tasks.map((task, mapIndex) => {
+                    if (taskIndex === mapIndex) {
+                        return {
+                            ...task,
+                            done: !task.done,
+                        }
+                    }
+                    return task;
+                });
+
+                render();
             })
         })
     }
@@ -30,14 +40,14 @@
 
         removeButtons.forEach((removeButton, removeTaskIndex) => {
             removeButton.addEventListener("click", () => {
-                tasks = tasks.filter((_,index) => index !== removeTaskIndex);
+                tasks = tasks.filter((_, index) => index !== removeTaskIndex);
 
                 render();
             });
         });
     };
 
-    const addingListItem = () => { // renderuje liste zadan
+    const renderTasks = () => { // renderuje liste zadan
         let htmlString = "";
 
         for (const task of tasks) {
@@ -62,7 +72,7 @@
     };
 
     const render = () => {
-        addingListItem();
+        renderTasks();
 
         taskDone();
     };
