@@ -1,36 +1,32 @@
 {
     let tasks = [];
 
-    // const updateTasks = (taskIndex) => {
-    // tasks = tasks.map((task, mapIndex) => {
-    //     if (taskIndex === mapIndex) {
-    //         return {
-    //             ...task,
-    //             done: !task.done,
-    //         }
-    //     }
-    //     return task;
-    // });
+    let hideDoneTasks = false;
 
-    // render();
-    // }
+    const markAllDone = () => {
+
+    }
+
+    const updateTasks = (taskIndex) => {
+    tasks = tasks.map((task, mapIndex) => {
+        if (taskIndex === mapIndex) {
+            return {
+                ...task,
+                done: !task.done,
+            }
+        }
+        return task;
+    });
+
+    render();
+    }
 
     const taskDone = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
         toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
             toggleDoneButton.addEventListener("click", () => {
-                tasks = tasks.map((task, mapIndex) => {
-                    if (taskIndex === mapIndex) {
-                        return {
-                            ...task,
-                            done: !task.done,
-                        }
-                    }
-                    return task;
-                });
-
-                render();
+                updateTasks(taskIndex);
             })
         })
     }
@@ -71,8 +67,13 @@
         removeTask();
     };
 
+    const renderButtons = () => {
+        // Ta funkcja ma renderować przyciski nad listą zadań po każdej interakcji użytkownika
+    }
+
     const render = () => {
         renderTasks();
+        renderButtons();
 
         taskDone();
     };
@@ -80,11 +81,11 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        refreshPageStatus();
+        addNewTask();
         formFocus();
     };
 
-    const refreshPageStatus = () => {
+    const addNewTask = () => {
         const newTask = document.querySelector(".js-newTask");
         const newTaskContent = newTask.value.trim();
 
