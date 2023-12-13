@@ -1,9 +1,24 @@
 {
     let tasks = [];
 
-    const updateTasks = (TaskIndex) => {
+    let doneTasksHidden = false;
+
+    const markAllDone = () => {
+        const btnAllDone = document.querySelector('.js-markAllTasksDone');
+        
+        tasks = tasks.map(task => {                 // Dlaczego nie może być ?: task => task.done
+            task.done = true                        // lub
+            return task;                            // task.done
+        });                                         // return task;
+
+        if (tasks.every(task => task.done === true)) btnAllDone.setAttribute('disabled', true);
+
+        render();
+    }
+
+    const updateTasks = (taskIndex) => {
         tasks = tasks.map((task, mapIndex) => {
-            if (TaskIndex === mapIndex) {
+            if (taskIndex === mapIndex) {
                 return {
                     ...task,
                     done: !task.done,
@@ -18,9 +33,9 @@
     const taskDone = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
-        toggleDoneButtons.forEach((toggleDoneButton, TaskIndex) => {
+        toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
             toggleDoneButton.addEventListener("click", () => {
-                updateTasks(TaskIndex);
+                updateTasks(taskIndex);
             })
         })
     }
@@ -30,14 +45,14 @@
 
         removeButtons.forEach((removeButton, removeTaskIndex) => {
             removeButton.addEventListener("click", () => {
-                tasks = tasks.filter((_,index) => index !== removeTaskIndex);
+                tasks = tasks.filter((_, index) => index !== removeTaskIndex);
 
                 render();
             });
         });
     };
 
-    const addingListItem = () => { // renderuje liste zadan
+    const renderTasks = () => { // renderuje liste zadan
         let htmlString = "";
 
         for (const task of tasks) {
@@ -61,20 +76,34 @@
         removeTask();
     };
 
-    const render = () => {
-        addingListItem();
+    const renderButtons = () => {
 
+    }
+
+    const bindBtnsEvents = () => {
+        const btnAllDone = document.querySelector('.js-markAllTasksDone');
+
+        if (btnAllDone && tasks.length > 0) { // Jeśli guzik istnieje, to przypina EventListener
+            btnAllDone.addEventListener('click', markAllDone);
+        }
+    }
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
+
+        bindBtnsEvents();
         taskDone();
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        refreshPageStatus();
+        addNewTask();
         formFocus();
     };
 
-    const refreshPageStatus = () => {
+    const addNewTask = () => {
         const newTask = document.querySelector(".js-newTask");
         const newTaskContent = newTask.value.trim();
 
