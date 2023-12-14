@@ -4,14 +4,10 @@
     let doneTasksHidden = false;
 
     const markAllDone = () => {
-        const btnAllDone = document.querySelector('.js-markAllTasksDone');
-        
         tasks = tasks.map(task => {                 // Dlaczego nie może być ?: task => task.done
             task.done = true                        // lub
             return task;                            // task.done
         });                                         // return task;
-
-        if (tasks.every(task => task.done === true)) btnAllDone.setAttribute('disabled', true);
 
         render();
     }
@@ -77,7 +73,13 @@
     };
 
     const renderButtons = () => {
+        const btnAllDone = document.querySelector('.js-markAllTasksDone');
 
+        if (tasks.every(task => task.done === true)) {
+            btnAllDone.setAttribute('disabled', true);
+        } else {
+            btnAllDone.setAttribute('disabled', false);
+        }
     }
 
     const bindBtnsEvents = () => {
