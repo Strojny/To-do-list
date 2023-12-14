@@ -23,7 +23,7 @@
             return task;
         });
 
-        render();
+    render();
     }
 
     const taskDone = () => {
@@ -35,6 +35,7 @@
             })
         })
     }
+    
 
     const removeTask = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -101,6 +102,7 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
+        addNewTask();
         addNewTask();
         formFocus();
     };
