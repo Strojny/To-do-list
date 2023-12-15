@@ -8,6 +8,10 @@
 
         tasks.forEach((task, i) => {
             if (task.done) taskHTMLelement[i].classList.toggle('taskContainer__markAllTasksDone--hidden');
+
+            doneTasksHidden = !doneTasksHidden;
+
+            render();
         });
     }
 
@@ -82,11 +86,26 @@
     };
 
     const renderButtons = () => {
+        const buttonsContainer = document.querySelector('.js-buttonsContainer');
+
+        const buttonsHTML = `
+                    <button class="js-hideDone">
+                        Ukryj ukonczone
+                    </button>
+                    <button class="js-markAllTasksDone">
+                        Ukończ wszystkie
+                    </button>
+        `
+
+        if (tasks.length > 0) {
+            buttonsContainer.insertAdjacentHTML('afterbegin', buttonsHTML);
+        }
+
         const btnAllDone = document.querySelector('.js-markAllTasksDone');
 
-        if (tasks.every(task => task.done === true)) {
+        if (btnAllDone && tasks.length > 0 && tasks.every(task => task.done === true)) {
             btnAllDone.setAttribute('disabled', true);
-        } else {
+        } else if(btnAllDone) {
             btnAllDone.setAttribute('disabled', false);
         }
     }
@@ -99,8 +118,9 @@
             btnAllDone.addEventListener('click', markAllDone);
         }
 
-        btnHideDone.addEventListener('click', hideDoneTasks);
-
+        if (btnHideDone) {
+            btnHideDone.addEventListener('click', hideDoneTasks);
+        }
     }
 
     const render = () => {
