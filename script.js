@@ -3,6 +3,14 @@
 
     let doneTasksHidden = false;
 
+    const hideDoneTasks = () => {
+        const taskHTMLelement = document.querySelectorAll('.js-taskContainer__itemContainer');
+
+        tasks.forEach((task, i) => {
+            if (task.done) taskHTMLelement[i].classList.toggle('taskContainer__markAllTasksDone--hidden');
+        });
+    }
+
     const markAllDone = () => {
         tasks = tasks.map(task => {                 // Dlaczego nie może być ?: task => task.done
             task.done = true                        // lub
@@ -23,7 +31,7 @@
             return task;
         });
 
-    render();
+        render();
     }
 
     const taskDone = () => {
@@ -35,7 +43,7 @@
             })
         })
     }
-    
+
 
     const removeTask = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -54,7 +62,7 @@
 
         for (const task of tasks) {
             htmlString += `
-                <li class="taskContainer__itemContainer">
+                <li class="taskContainer__itemContainer js-taskContainer__itemContainer">
                     <button class="taskContainer__toggleDoneButton js-done">
                         ${task.done ? '&#10004;' : ''}
                     </button>
@@ -85,10 +93,14 @@
 
     const bindBtnsEvents = () => {
         const btnAllDone = document.querySelector('.js-markAllTasksDone');
+        const btnHideDone = document.querySelector('.js-hideDone');
 
         if (btnAllDone && tasks.length > 0) { // Jeśli guzik istnieje, to przypina EventListener
             btnAllDone.addEventListener('click', markAllDone);
         }
+
+        btnHideDone.addEventListener('click', hideDoneTasks);
+
     }
 
     const render = () => {
@@ -102,7 +114,6 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        addNewTask();
         addNewTask();
         formFocus();
     };

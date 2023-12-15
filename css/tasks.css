@@ -67,6 +67,10 @@
     padding: 5px;
 }
 
+.taskContainer__markAllTasksDone--hidden {
+    display: none;
+}
+
 .taskContainer__taskContent {
     display: flex;
     align-items: center;
