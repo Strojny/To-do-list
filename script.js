@@ -92,21 +92,13 @@
                     <button class="js-hideDone">
                         Ukryj ukonczone
                     </button>
-                    <button class="js-markAllTasksDone">
+                    <button class="js-markAllTasksDone" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
                         Ukończ wszystkie
                     </button>
         `
 
         if (tasks.length > 0) {
-            buttonsContainer.insertAdjacentHTML('afterbegin', buttonsHTML);
-        }
-
-        const btnAllDone = document.querySelector('.js-markAllTasksDone');
-
-        if (btnAllDone && tasks.length > 0 && tasks.every(task => task.done === true)) {
-            btnAllDone.setAttribute('disabled', true);
-        } else if(btnAllDone) {
-            btnAllDone.setAttribute('disabled', false);
+            buttonsContainer.innerHTML = buttonsHTML;
         }
     }
 
