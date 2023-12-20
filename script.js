@@ -86,9 +86,12 @@
     };
 
     const renderButtons = () => {
-        const buttonsContainer = document.querySelector('.js-buttonsContainer');
+        const btnsAndTaskHeaderContainer = document.querySelector('.js-btnsAndTaskHeaderContainer');
 
         const buttonsHTML = `
+                    <h2 class="taskHeader">
+                        Lista zadań
+                    </h2>
                     <button class="js-hideDone">
                         Ukryj ukonczone
                     </button>
@@ -98,7 +101,7 @@
         `
 
         if (tasks.length > 0) {
-            buttonsContainer.innerHTML = buttonsHTML;
+            btnsAndTaskHeaderContainer.innerHTML = buttonsHTML;
         }
     }
 
