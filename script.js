@@ -3,7 +3,11 @@
 
     let doneTasksHidden = false;
 
-    const hideDoneTasks = () => doneTasksHidden = !doneTasksHidden;
+    const hideDoneTasks = () => {
+        doneTasksHidden = !doneTasksHidden;
+
+        render();
+    }
 
 
     const markAllDone = () => {
