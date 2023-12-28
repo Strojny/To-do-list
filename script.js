@@ -3,17 +3,8 @@
 
     let doneTasksHidden = false;
 
-    const hideDoneTasks = () => {
-        const taskHTMLelement = document.querySelectorAll('.js-taskContainer__itemContainer');
+    const hideDoneTasks = () => doneTasksHidden = !doneTasksHidden;
 
-        tasks.forEach((task, i) => {
-            if (task.done) taskHTMLelement[i].classList.toggle('taskContainer__markAllTasksDone--hidden');
-
-            doneTasksHidden = !doneTasksHidden;
-
-            render();
-        });
-    }
 
     const markAllDone = () => {
         tasks = tasks.map(task => {                 // Dlaczego nie może być ?: task => task.done
@@ -66,7 +57,7 @@
 
         for (const task of tasks) {
             htmlString += `
-                <li class="taskContainer__itemContainer js-taskContainer__itemContainer">
+                <li class="taskContainer__itemContainer ${doneTasksHidden = true ? 'taskContainer__itemContainer--hidden' : ''}">
                     <button class="taskContainer__toggleDoneButton js-done">
                         ${task.done ? '&#10004;' : ''}
                     </button>
@@ -87,6 +78,8 @@
 
     const renderButtons = () => {
         const btnsAndTaskHeaderContainer = document.querySelector('.js-btnsAndTaskHeaderContainer');
+
+        // Poniższy HTML jest zawsze renderowany razem z 'taskHeader', aby nie dodawało się wiele przycisków 'btnAllDone' i 'btnHideDone'
 
         const buttonsHTML = `
                     <h2 class="taskHeader">
