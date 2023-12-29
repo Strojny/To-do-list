@@ -91,7 +91,7 @@
                         Lista zadań
                     </h2>
                     <button class="js-hideDone">
-                        Ukryj ukonczone
+                        ${doneTasksHidden == true ? 'Pokaż' : 'Ukryj'} ukończone
                     </button>
                     <button class="js-markAllTasksDone" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
                         Ukończ wszystkie
