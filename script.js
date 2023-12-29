@@ -61,7 +61,8 @@
 
         for (const task of tasks) {
             htmlString += `
-                <li class="taskContainer__itemContainer ${doneTasksHidden == true ? 'taskContainer__itemContainer--hidden' : ''}">
+                <li class="taskContainer__itemContainer ${(doneTasksHidden == true && task.done) ?
+                    'taskContainer__itemContainer--hidden' : ''}">
                     <button class="taskContainer__toggleDoneButton js-done">
                         ${task.done ? '&#10004;' : ''}
                     </button>
